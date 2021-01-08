@@ -27,16 +27,25 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { reactive } from 'vue';
+import router from '../router'
+import axios from 'axios';
+
 export default {
   setup() {
     const post = reactive({
       title: '',
       body: '',
-    })
-    return { 
+    });
+    const addPost = () => {
+      let uri = 'http://localhost:4000/posts/add';
+      axios.post(uri, post).then(() => {
+        router.push({ name: 'posts' });
+      });
+    };
+    return {
       post,
-      addPost: () => console.log(post),
+      addPost,
     };
   },
 };
