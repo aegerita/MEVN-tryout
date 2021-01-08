@@ -1,5 +1,15 @@
 # mevn
 
+axios
+bootstrap
+vue-router
+express
+nodemon
+mongodb
+body-parser 
+cors 
+mongoose
+
 ## Project setup
 ```
 npm install
